@@ -177,7 +177,7 @@ class Toolbar extends PureComponent {
       // indicates if searc is activated
       isSearchActiveInternal,
       // value for serach input
-      searchValue: '',
+      searchValue: props.searchValue?props.searchValue:'',
       // everything around background animation
       defaultScaleValue: new Animated.Value(isSearchActiveInternal ? 0.01 : 1),
       searchScaleValue: new Animated.Value(isSearchActiveInternal ? 1 : 0.01),
