@@ -179,7 +179,7 @@ class IconToggle extends PureComponent {
   }
 
   onPressIn() {
-    const { disabled } = this.props;
+    const { disabled, onPressIn} = this.props;
     const { scaleValue } = this.state;
 
     if (!disabled) {
@@ -189,6 +189,10 @@ class IconToggle extends PureComponent {
         easing: Easing.bezier(0.0, 0.0, 0.2, 1),
         useNativeDriver: true,
       }).start();
+    }
+    
+    if (onPressIn && !disabled) {
+      onPressIn();
     }
   }
 
