@@ -144,9 +144,9 @@ class LeftElement extends PureComponent {
     }
 
     let onPress = onLeftElementPress;
-
+    let onPressIn;
     if (isSearchActive) {
-      onPress = onSearchClose;
+      onPressIn = onSearchClose;
     }
 
     const flattenLeftElement = StyleSheet.flatten(styles.leftElement);
@@ -165,6 +165,7 @@ class LeftElement extends PureComponent {
           name={leftElement}
           color={flattenLeftElement.color}
           onPress={onPress}
+          onPressIn={onPressIn}
           size={size}
           iconSet={iconSet}
           style={flattenLeftElement}
