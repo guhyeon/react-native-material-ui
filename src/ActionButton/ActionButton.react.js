@@ -236,6 +236,9 @@ class ActionButton extends PureComponent {
   }
 
   toggleState = () => {
+    if(!this.props.actions){
+      return;
+    }
     const { transition } = this.props;
     const { render } = this.state;
 
@@ -274,7 +277,7 @@ class ActionButton extends PureComponent {
     return (
       <View style={styles.toolbarPositionContainer}>
         <View key="main-button" style={styles.toolbarContainer}>
-          {actions.map(action => {
+          {actions&&actions.map(action => {
             if (typeof action === 'string') {
               return this.renderToolbarAction(styles, action);
             }
@@ -305,7 +308,7 @@ class ActionButton extends PureComponent {
                   marginBottom: 16,
                 }}
               >
-                {actions.map(action => {
+                {actions&&actions.map(action => {
                   if (typeof action === 'string') {
                     return this.renderAction(styles, action);
                   }
